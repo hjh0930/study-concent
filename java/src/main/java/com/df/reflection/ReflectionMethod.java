@@ -6,6 +6,7 @@ import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.lang.reflect.Parameter;
+import java.util.*;
 
 /**
  * @author dongfeng
@@ -50,7 +51,7 @@ public class ReflectionMethod {
         testMethod();
     }*/
     public static void main(String[] args) {
-       StringBuffer stringBuffer = new StringBuffer();
+      /* StringBuffer stringBuffer = new StringBuffer();
        for (int i=0;i<1000000;i++){
            stringBuffer.append("111111111111").append(",");
        }
@@ -58,6 +59,22 @@ public class ReflectionMethod {
             System.out.println(stringBuffer.toString().getBytes("utf-8").length/(1024*1024));
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
-        }
+        }*/
+
+        Map<String, String> map = new HashMap<String, String>();
+        map.put("1", "AA");
+        map.put("2", "BB");
+        map.put("3", "CC");
+        map.put("4", "DD");
+
+
+        List<String> valueList = new ArrayList<String>(map.values());
+
+        System.out.println(valueList);
+
+
+        Double d = 1.0;
+        Long a = d.longValue();
+        System.out.println(a);
     }
 }
