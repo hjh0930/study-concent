@@ -6,6 +6,8 @@ import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.lang.reflect.Parameter;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.*;
 
 /**
@@ -61,7 +63,7 @@ public class ReflectionMethod {
             e.printStackTrace();
         }*/
 
-        Map<String, String> map = new HashMap<String, String>();
+        /*Map<String, String> map = new HashMap<String, String>();
         map.put("1", "AA");
         map.put("2", "BB");
         map.put("3", "CC");
@@ -75,6 +77,8 @@ public class ReflectionMethod {
 
         Double d = 1.0;
         Long a = d.longValue();
-        System.out.println(a);
+        System.out.println(a);*/
+
+        System.out.println( System.currentTimeMillis());
     }
 }

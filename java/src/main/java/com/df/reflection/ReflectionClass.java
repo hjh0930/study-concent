@@ -29,5 +29,18 @@ public class ReflectionClass {
 
     public static void main(String[] args) {
         getField();
+
+        System.out.println(aa(0));
+       /* long[] a = new long[0];
+        System.out.println(a.length);*/
+    }
+
+    private static String aa(int count){
+        count++;
+        if (count==5){
+            return "bb";
+        }
+        aa(count);
+        return "aaa";
     }
 }
