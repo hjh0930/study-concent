@@ -10,6 +10,7 @@ import java.util.Objects;
 @Data
 public class LinkListExample {
     public Node head = null;
+
     @Data
     class Node {
 
@@ -141,9 +142,9 @@ public class LinkListExample {
     /**
      * 打印
      */
-    public void  print (){
+    public void print() {
         Node tmp = head;
-        while(tmp.next!=null) {
+        while (tmp.next != null) {
             System.out.println(tmp.data);
             tmp = tmp.next;
         }
@@ -152,6 +153,7 @@ public class LinkListExample {
 
     /**
      * 反转
+     *
      * @param node
      */
     private void ReverseIteratively(Node node) {
@@ -159,10 +161,10 @@ public class LinkListExample {
         Node ReverseNode = null;
         Node pNode = node;
         Node prev = null;
-        int length =0;
-        while (pNode!=null) {
+        int length = 0;
+        while (pNode != null) {
             Node pNext = pNode.next;
-            if (pNext == null){
+            if (pNext == null) {
                 // 只赋值最后一个值
                 ReverseNode = pNode;
             }
@@ -180,23 +182,92 @@ public class LinkListExample {
     }
 
     /**
-     * 查找单平台的中间数据
+     * 查找单平台的中间数据（适用指针快慢指针）
+     *
      * @param node
      */
-    public void searchMid(Node node){
-
+    public void searchMid(Node node) {
+        Node q = this.head;
+        Node p = this.head;
+        while (q.next != null && q.next.next != null) {
+            q = q.next.next;
+            p = p.next;
+        }
+        // 用快慢指针，需要判断node的总长度来判断中间节点有几个
+        int length = linkListLength();
+        if (length % 2 == 0) {
+            System.out.println(p.data + "-" + p.next.data);
+            return;
+        }
+        System.out.println(p.data);
     }
+
+
+    /**
+     * 查询倒数第k个值
+     */
+    private Node findElem(Node node, int k) {
+        if (k < 1 || k > linkListLength()) {
+            return null;
+        }
+        Node p = this.head;
+        Node q = this.head;
+        for (int i = 0; i < k - 1; i++) {
+            p = p.next;
+        }
+        // 由于p.next!=null 会导致p 的最后一次循环没有走，顾在for循环中-1 使p在for减一次循环
+        while (p.next != null) {
+            p = p.next;
+            q = q.next;
+        }
+        System.out.println(q);
+        return q;
+    }
+
+    /**
+     * 删除重复节点
+     */
+    public void deleteDuplecate(Node head) {
+        Node q = this.head;
+        // q的数据是逐渐的减少的
+        while (q.next != null) {
+            Node p = q;
+            while (p.next != null) {
+                // 去除自己node节点所有用q当前节点和p的下一个节点比较，如果相同的话就直接跳过下个节点，下下节点在比较
+                if (q.data.equals(p.next.data)) {
+                    p.next = p.next.next;
+                    System.out.println(p.data);
+                } else {
+                    p = p.next;
+                }
+            }
+            q = q.next;
+        }
+    }
+
     public static void main(String[] args) {
         LinkListExample listExample = new LinkListExample();
         listExample.addNode("1");
         listExample.addNode("2");
         listExample.addNode("3");
+        listExample.addNode("3");
         listExample.addNode("4");
         listExample.addNode("5");
+        //listExample.addNode("6");
         /*System.out.println(listExample.linkListLength());
         System.out.println(listExample.head.data);
         listExample.print();*/
-        listExample.ReverseIteratively(listExample.head);
+        // 中间节点查
+        //listExample.searchMid(listExample.head);
+        // 反转
+        //listExample.ReverseIteratively(listExample.head);
+        //查询
+        /*Node node = listExample.findElem(listExample.head,4);
+        if (Objects.nonNull(node)) {
+            System.out.println(node.data);
+        }*/
+
+        listExample.deleteDuplecate(listExample.head);
     }
 
 }
