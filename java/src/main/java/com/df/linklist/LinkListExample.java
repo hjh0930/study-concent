@@ -94,7 +94,7 @@ public class LinkListExample {
         Node insertNode = new Node(data);
         // 临时节点
         Node tmp = head;
-        while (Objects.nonNull(tmp)) {
+        while (Objects.nonNull(tmp.next)) {
             if (count == index - 1) {
                 insertNode.next = tmp.next;
                 tmp.next = insertNode;
@@ -250,24 +250,24 @@ public class LinkListExample {
         listExample.addNode("1");
         listExample.addNode("2");
         listExample.addNode("3");
-        listExample.addNode("3");
         listExample.addNode("4");
         listExample.addNode("5");
-        //listExample.addNode("6");
-        /*System.out.println(listExample.linkListLength());
-        System.out.println(listExample.head.data);
-        listExample.print();*/
+        listExample.addNode("6");
+        //System.out.println(listExample.linkListLength());
+       // listExample.insertNode(2,"4");
+       // System.out.println(listExample.head.data);
+        //listExample.print();
         // 中间节点查
         //listExample.searchMid(listExample.head);
         // 反转
-        //listExample.ReverseIteratively(listExample.head);
+        listExample.ReverseIteratively(listExample.head);
         //查询
         /*Node node = listExample.findElem(listExample.head,4);
         if (Objects.nonNull(node)) {
             System.out.println(node.data);
         }*/
 
-        listExample.deleteDuplecate(listExample.head);
+       // listExample.deleteDuplecate(listExample.head);
     }
 
 }
