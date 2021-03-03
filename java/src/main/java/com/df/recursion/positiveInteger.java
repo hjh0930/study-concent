@@ -14,6 +14,21 @@ public class positiveInteger {
         }
     }
     /**
+     * 倒叙输出
+     */
+    public static  void reverse (int x){
+        int rev =0;
+        while (x!=0) {
+            int pop =  x%10;
+            x = x/10;
+            rev = rev*10+pop;
+        }
+
+        System.out.println(rev);
+
+    }
+
+    /**
      * 汉诺塔
      *      有柱子 x z y，最终将x上的n个圆盘借助z移动到y上
      *      递归思想：
@@ -31,6 +46,7 @@ public class positiveInteger {
     }
 
     public static void main(String[] args) {
-        index(12345);
+       // index(12345);
+        reverse(12345);
     }
 }

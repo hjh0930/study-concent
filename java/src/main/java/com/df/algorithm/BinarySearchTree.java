@@ -185,7 +185,6 @@ public class BinarySearchTree {
         }
         return ret;
     }
-
     public static void main(String[] args) {
         BinaryTreeNode node = init();
         //BinaryTree.midOrderNode(node);

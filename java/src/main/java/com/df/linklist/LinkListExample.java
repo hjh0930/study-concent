@@ -223,7 +223,19 @@ public class LinkListExample {
         System.out.println(q);
         return q;
     }
+    /*private Node removeNthFromEnd(Node node, int k) {
+        if (k < 1 || k > linkListLength()) {
+            return null;
+        }
+        Node node1 = node;
+        int length = 6;
+        for (int i =0;i<length-k-1;i++) {
+            node1 = node1.next;
+        }
+        node1.next = node1.next.next;
 
+        return node;
+    }*/
     /**
      * 删除重复节点
      */
@@ -260,14 +272,16 @@ public class LinkListExample {
         // 中间节点查
         //listExample.searchMid(listExample.head);
         // 反转
-        listExample.ReverseIteratively(listExample.head);
+      listExample.ReverseIteratively(listExample.head);
         //查询
-        /*Node node = listExample.findElem(listExample.head,4);
+       /* Node node = listExample.findElem(listExample.head,4);
         if (Objects.nonNull(node)) {
             System.out.println(node.data);
         }*/
 
-       // listExample.deleteDuplecate(listExample.head);
+      //  listExample.deleteDuplecate(listExample.head);
+
+      //  System.out.println(listExample.removeNthFromEnd(listExample.head,2));
     }
 
 }

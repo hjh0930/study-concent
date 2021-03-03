@@ -26,5 +26,7 @@ public class BinaryTreeNode {
     private BinaryTreeNode rightNode;
 
 
-
+    public BinaryTreeNode(String data) {
+        this.data = data;
+    }
 }

@@ -1,5 +1,7 @@
 package com.df.queue;
 
+import java.util.Queue;
+
 /**
  * @author 东风
  */

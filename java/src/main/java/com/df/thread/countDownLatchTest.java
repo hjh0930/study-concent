@@ -31,7 +31,6 @@ public class countDownLatchTest {
       }
 
       try {
-
          countDown.await();
          System.out.println("2222");
          System.out.println(concurrentHashmap);
@@ -41,5 +40,4 @@ public class countDownLatchTest {
       }
 
    }
-
 }
